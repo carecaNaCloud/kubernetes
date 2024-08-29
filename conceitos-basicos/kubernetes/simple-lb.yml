@@ -1,0 +1,12 @@
+#Load balancer
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-lb
+spec:
+  selector:
+    app: webapp #nome do app (container)
+  ports:
+    - port: 80
+      targetPort: 80
+  type: LoadBalancer
